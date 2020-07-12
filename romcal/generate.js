@@ -3,6 +3,7 @@ const romcal = require('romcal');
 // calendarFor() with no arguments should generate
 // General Roman Calendar for the current year
 const calendar = romcal.calendarFor({
+  year: 2019, // TODO: don't hardcode
   type: 'liturgical', // liturgical, not civil year
 });
 
@@ -19,7 +20,12 @@ const rankMap = {
 };
 
 const dateFormat =
-  (date) => (1 + date.getMonth()) + '/' + date.getDate();
+  (date) =>
+    date.getFullYear() +
+      '-' +
+      (1 + date.getMonth()).toString().padStart(2, '0') +
+      '-' +
+      date.getDate().toString().padStart(2, '0');
 
 calendar.forEach((day) => {
   const date = new Date(day['moment']);
