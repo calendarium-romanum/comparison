@@ -19,3 +19,10 @@ Install dependencies
 Run the comparison
 
 `$ make run`
+
+## Compared libraries
+
+* https://github.com/igneus/calendarium-romanum
+* https://github.com/pejulian/romcal
+
+(Pull requests with new libraries joining the race welcome.)
