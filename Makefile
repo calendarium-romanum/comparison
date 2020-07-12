@@ -6,9 +6,13 @@ calendarium-romanum:
 romcal:
 	$(MAKE) -C romcal
 
-run:
+run: generate compare
+
+generate:
 	$(MAKE) -C calendarium-romanum run
 	$(MAKE) -C romcal run
-	diff --color calendarium-romanum/output.txt romcal/output.txt
+
+compare:
+	diff --color -U1000 --ignore-case --ignore-space-change calendarium-romanum/output.txt romcal/output.txt
 
 .PHONY: calendarium-romanum romcal
