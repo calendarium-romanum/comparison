@@ -1,6 +1,4 @@
-all: Gemfile.lock
-
-Gemfile.lock: Gemfile
+all:
 	bundle install
 
 run:
