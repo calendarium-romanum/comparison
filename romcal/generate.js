@@ -22,12 +22,14 @@ const dateFormat =
   (date) => (1 + date.getMonth()) + '/' + date.getDate();
 
 calendar.forEach((day) => {
-  let date = new Date(day['moment']);
-  console.log(
-    dateFormat(date) +
-      ' ' +
-      day['name'] +
-      ', ' +
-      rankMap[day['type']]
+  const date = new Date(day['moment']);
+  day['name'].split('/').forEach((name) =>
+    console.log(
+      dateFormat(date) +
+        ' ' +
+        name +
+        ', ' +
+        rankMap[day['type']]
+    )
   );
 });
